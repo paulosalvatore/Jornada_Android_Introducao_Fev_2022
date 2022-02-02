@@ -2,6 +2,7 @@ package com.oceanbrasil.jornada_android_introducao_fev_2022
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 
 class ResultadoActivity : AppCompatActivity() {
@@ -17,5 +18,12 @@ class ResultadoActivity : AppCompatActivity() {
 
         // Atualizamos o texto do elemento para o valor que foi recebido
         tvResultado.text = nomeDigitado
+
+        // Funcionamento do botão voltar
+        val btVoltar = findViewById<Button>(R.id.btVoltar)
+
+        btVoltar.setOnClickListener {
+            finish()
+        }
     }
 }
