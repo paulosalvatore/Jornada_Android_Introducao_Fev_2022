@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
         // 1 - Pegar o botão
         // 2 - Adicionar o listener
 
-        val button = findViewById<Button>(R.id.button)
-        val textView = findViewById<TextView>(R.id.textView)
+        val button = findViewById<Button>(R.id.btEnviar)
+        val textView = findViewById<TextView>(R.id.tvResultado)
 
         // Dentro das chaves, o código que escrevemos será executado apenas
         // quando o botão for clicado
