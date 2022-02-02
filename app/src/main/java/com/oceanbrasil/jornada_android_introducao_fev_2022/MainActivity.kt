@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
@@ -16,15 +17,22 @@ class MainActivity : AppCompatActivity() {
         // 1 - Pegar o botão
         // 2 - Adicionar o listener
 
-        val button = findViewById<Button>(R.id.btEnviar)
-        val textView = findViewById<TextView>(R.id.tvResultado)
+        val btEnviar = findViewById<Button>(R.id.btEnviar)
+        val tvResultado = findViewById<TextView>(R.id.tvResultado)
+        val etName = findViewById<EditText>(R.id.etName)
 
         // Dentro das chaves, o código que escrevemos será executado apenas
         // quando o botão for clicado
-        button.setOnClickListener {
+        btEnviar.setOnClickListener {
             // Código para executar quando o botão for clicado
 
-            textView.text = "Samsung Ocean!!"
+            val name = etName.text.toString()
+
+            if (name.isNotBlank()) {
+                tvResultado.text = name
+            } else {
+                etName.error = "Digite um nome válido"
+            }
         }
     }
 }
